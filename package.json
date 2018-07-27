@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.dev.js",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --watch --onlyChanged"
   },
   "jest": {
     "testMatch": ["<rootDir>/src/**/?(*.)(spec|test).js"],
