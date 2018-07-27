@@ -5,7 +5,13 @@
   "author": "Nathan Tavares Nascimento <nathan.tnascimento@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.config.dev.js"
+    "start": "webpack-dev-server --config config/webpack.config.dev.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": ["<rootDir>/src/**/?(*.)(spec|test).js"],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost"
   },
   "dependencies": {
     "react": "^16.4.1",
