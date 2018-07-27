@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Nathan Tavares Nascimento <nathan.tnascimento@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config config/webpack.config.dev.js"
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
@@ -19,6 +22,7 @@
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   }
 }
