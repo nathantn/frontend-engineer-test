@@ -1,7 +1,15 @@
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'https://api.iextrading.com/1.0',
+});
+
 export default {
-  BASE_URL: 'https://api.iextrading.com/1.0',
+  fetchStocks(options = {}) {
+    return api.get('/tops', options);
+  },
 
-  fetchStocks() {
-
-  }
-}
+  getStock(stockSymbol, options) {
+    return api.get(`/${stockSymbol}/quote`, options);
+  },
+};

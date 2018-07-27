@@ -10,11 +10,14 @@
     "test:ci": "jest --watch --onlyChanged"
   },
   "jest": {
-    "testMatch": ["<rootDir>/src/**/?(*.)(spec|test).js"],
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(spec|test).js"
+    ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
