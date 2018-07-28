@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import StockListPage from './StockListPage';
-import StockDetailPage from './StockDetailPage';
+import StockQuotePage from './StockQuotePage';
 
 const Main = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/stock/:symbol" component={StockDetailPage} />
+      <Route path="/stock/:symbol" component={StockQuotePage} />
       <Route exact path="/" component={StockListPage} />
     </Switch>
   </BrowserRouter>
