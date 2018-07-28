@@ -1,5 +1,5 @@
 import reducer from './stockFilterQuery';
-import { updateFilterQuery } from '../actions/stockFilterQuery';
+import { updateStockFilterQuery } from '../actions/stockFilterQuery';
 
 describe('reducers: stockFilterQuery', () => {
   test('starts state with null value', () => {
@@ -7,11 +7,11 @@ describe('reducers: stockFilterQuery', () => {
   });
 
   test('empty string returns a null state', () => {
-    expect(reducer(undefined, updateFilterQuery(''))).toBeNull();
+    expect(reducer(undefined, updateStockFilterQuery(''))).toBeNull();
   });
 
-  test('update value when receive updateFilterQuery action', () => {
+  test('update value when receive updateStockFilterQuery action', () => {
     const query = 'test';
-    expect(reducer(undefined, updateFilterQuery(query))).toEqual(query);;
+    expect(reducer(undefined, updateStockFilterQuery(query))).toEqual(query);;
   })
 });
