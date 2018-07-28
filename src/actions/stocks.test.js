@@ -6,6 +6,7 @@ import {
   requestStocksError,
 } from './stocks';
 import iexApi from '../resources/iexApi'
+import { Map, List } from 'immutable';
 
 // Mock functions
 const dispatchMock = jest.fn();
@@ -48,7 +49,7 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocksIfNeeded should not dispatch fetchStocks action if isFetching attribute from stocks state is true', () => {
-    getStateMock.mockReturnValue({ stocks: { isFetching: true }});
+    getStateMock.mockReturnValue({ stocks: Map({ isFetching: true }) });
 
     fetchStocksIfNeeded()(dispatchMock, getStateMock, { iexApi });
 
@@ -57,7 +58,7 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocksIfNeeded should not dispatch fetchStocks action if data attribute from stocks state have some value', () => {
-    getStateMock.mockReturnValue({ stocks: { data: [] }});
+    getStateMock.mockReturnValue({ stocks: Map({ data: List([]) }) });
 
     fetchStocksIfNeeded()(dispatchMock, getStateMock, { iexApi });
 
@@ -66,7 +67,7 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocksIfNeeded should dispatch fetchStocks when isFetching and data attribute from stocks states have falsy value', () => {
-    getStateMock.mockReturnValue({ stocks: { isFetching: false, data: null }});
+    getStateMock.mockReturnValue({ stocks: Map({ isFetching: false, data: null }) });
 
     fetchStocksIfNeeded()(dispatchMock, getStateMock, { iexApi });
 
