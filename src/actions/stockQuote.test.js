@@ -19,8 +19,10 @@ describe('actions: stockQuote', () => {
     getStockQuoteMock.mockReset();
   });
 
-  test('fetchStockQuote dispatch requestStockQuote action before start the request', () => {
-    fetchStockQuote()(dispatchMock, getStateMock, { iexApi });
+  test('fetchStockQuote dispatch requestStockQuote action before start the request', async () => {
+    expect.assertions(2);
+    iexApi.getStockQuote.mockResolvedValue(true);
+    await fetchStockQuote()(dispatchMock, getStateMock, { iexApi });
 
     expect(dispatchMock).toHaveBeenCalledWith(requestStockQuote());
     expect(iexApi.getStockQuote).toHaveBeenCalled();
