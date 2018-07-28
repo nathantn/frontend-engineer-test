@@ -11,7 +11,7 @@ const filterStocksBySymbol = (list, query) => list.filter(stockSymbolChecker(que
 export const getVisibleStocks = createSelector(
   [getStocks, getStockFilterQuery],
   (stocks, query) => {
-    if (stocks.isFetching) {
+    if (stocks.get('isFetching') || !stocks.get('data')) {
       return stocks;
     }
 
