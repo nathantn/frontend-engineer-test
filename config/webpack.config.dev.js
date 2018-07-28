@@ -10,7 +10,7 @@ const publicDirectory = path.resolve(appDirectory, 'public');
 const ExtractScss = new ExtractTextPlugin('./css/style.css');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   mode: 'development',
   output: {
     path: buildDirectory,
