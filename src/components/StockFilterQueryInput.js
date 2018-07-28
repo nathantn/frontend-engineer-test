@@ -1,7 +1,10 @@
 import React from 'react'
 
 const StockFilterQueryInput = props => (
-  <input value={undefined} onChange={props.onChange} />
+  <div>
+    <input value={undefined} onChange={props.onChange} />
+    {props.value && <small>filtrando por: <strong>"{props.value}"</strong></small>}
+  </div>
 );
 
 StockFilterQueryInput.defaultProps = {
