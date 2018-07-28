@@ -21,7 +21,8 @@ export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
   const response = await iexApi.fetchStocks();
 
   if (response.ok) {
-    dispatch(requestStocksSuccess(response.data));
+    const sortByPrice = ({ price: aPrice}, { price: bPrice }) => bPrice - aPrice;
+    dispatch(requestStocksSuccess(response.data.sort(sortByPrice)));
   } else {
     dispatch(requestStocksError(response.data));
   }
