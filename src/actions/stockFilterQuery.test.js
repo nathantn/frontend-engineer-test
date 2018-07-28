@@ -1,8 +1,8 @@
-import { updateFilterQuery, UPDATE_FILTER_QUERY } from './stockFilterQuery';
+import { updateStockFilterQuery, UPDATE_FILTER_QUERY } from './stockFilterQuery';
 
-describe('actions: stockFilterQuery', () => {
+describe('actions: updateStockFilterQuery', () => {
   test('updateFilterQuery return right object', () => {
     const query = 'test';
-    expect(updateFilterQuery(query)).toEqual({ type: UPDATE_FILTER_QUERY, payload: query });
+    expect(updateStockFilterQuery(query)).toEqual({ type: UPDATE_FILTER_QUERY, payload: query });
   })
 });

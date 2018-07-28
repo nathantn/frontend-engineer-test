@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ToBRL from '../ToBRL';
+import ToBRL from './ToBRL';
 
 const StockItem = props => (
   <div>

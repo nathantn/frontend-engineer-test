@@ -1,11 +1,13 @@
 import React from 'react';
 
 import AsyncStateRender from '../components/AsyncStateRender';
-import VisibleStocksProvider from '../providers/VisibleStocksProvider';
+import StockFilterQueryInput from '../containers/StockFilterQueryInput'
 import StockList from '../components/StockList';
+import VisibleStocksProvider from '../providers/VisibleStocksProvider';
 
 const StockListPage = () => (
   <div className="page-wrapper">
+    <StockFilterQueryInput />
     <VisibleStocksProvider>
       {state => (
         <AsyncStateRender

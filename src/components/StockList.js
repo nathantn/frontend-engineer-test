@@ -1,5 +1,5 @@
 import React from 'react';
-import StockItem from '../StockItem/StockItem';
+import StockItem from './StockItem';
 
 const StockList = props => (
   <ul className="stock-list list">

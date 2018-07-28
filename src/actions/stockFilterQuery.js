@@ -1,6 +1,6 @@
-export const UPDATE_FILTER_QUERY = '@stockFilterQuery/updateFilterQuery'
+export const UPDATE_FILTER_QUERY = '@stockFilterQuery/updateStockFilterQuery'
 
-export const updateFilterQuery = (query = null) => ({
+export const updateStockFilterQuery = (query = null) => ({
   type: UPDATE_FILTER_QUERY,
   payload: query,
 });
