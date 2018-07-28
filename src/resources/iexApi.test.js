@@ -15,7 +15,7 @@ describe('resource: IEXTranding', () => {
   });
 
   test('getStock is a function and return a Promise', () => {
-    expect(typeof API.getStock).toBe('function');
-    expect(API.getStock()).resolves.toBeTruthy();
+    expect(typeof API.getStockQuote).toBe('function');
+    expect(API.getStockQuote()).resolves.toBeTruthy();
   });
 });

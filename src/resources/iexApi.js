@@ -9,7 +9,7 @@ export default {
     return api.get('/tops/last', options);
   },
 
-  getStock(stockSymbol, options) {
+  getStockQuote(stockSymbol, options) {
     return api.get(`/${stockSymbol}/quote`, options);
   },
 };
