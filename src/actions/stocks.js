@@ -1,6 +1,6 @@
 export const REQUEST_STOCKS = '@stocks/request';
-export const REQUEST_STOCKS_SUCCESS = '@stocks/request_success';
-export const REQUEST_STOCKS_ERROR = '@stocks/request_error';
+export const REQUEST_STOCKS_SUCCESS = '@stocks/requestSuccess';
+export const REQUEST_STOCKS_ERROR = '@stocks/requestError';
 
 export const requestStocks = () => ({
   type: REQUEST_STOCKS,
