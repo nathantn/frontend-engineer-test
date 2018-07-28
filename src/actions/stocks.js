@@ -27,7 +27,7 @@ export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
   }
 }
 
-const shouldFetchStocks = state => !state.isFetching && !state.data;
+const shouldFetchStocks = state => !state.get('isFetching') && !state.get('data');
 
 export const fetchStocksIfNeeded = () => async (disptach, getState, { iexApi }) => {
   const { stocks } = getState();
