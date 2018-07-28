@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 
-const getStocks = state => state.stocks.data;
+const getStocks = state => state.stocks;
 const getStockFilterQuery = state => state.stockFilterQuery;
 
 const filterTopTwentyStocks = list => list.slice(0, 20);
@@ -11,10 +11,15 @@ const filterStocksBySymbol = (list, query) => list.filter(stockSymbolChecker(que
 export const getVisibleStocks = createSelector(
   [getStocks, getStockFilterQuery],
   (stocks, query) => {
-    if (query) {
-      return filterStocksBySymbol(stocks, query);
+    if (stocks.isFetching) {
+      return stocks;
     }
 
-    return filterTopTwentyStocks(stocks);
+    const stockList = stocks.get('data');
+    const data = query
+      ? filterStocksBySymbol(stockList, query)
+      : filterTopTwentyStocks(stockList);
+
+    return stocks.merge({ data })
   }
 );

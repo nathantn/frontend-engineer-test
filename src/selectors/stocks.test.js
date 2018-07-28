@@ -10,33 +10,36 @@ describe('selectors: stocks', () => {
   test('getVisibleStocks return 20 must important stocks from state when filter is null', () => {
     const state = {
       stockFilterQuery: null,
-      stocks: {
+      stocks: Map({
         isFething: false,
         data: List(exampleData)
-      }
+      })
     };
-    const expected = List([
-      { symbol: 'KWR', lastSalePrice: 161.3 },
-      { symbol: 'MHNC', lastSalePrice: 23.62 },
-      { symbol: 'DWTR', lastSalePrice: 0 },
-      { symbol: 'TACOW', lastSalePrice: 0 },
-      { symbol: 'INFU', lastSalePrice: 0 },
-      { symbol: 'AI', lastSalePrice: 10.415 },
-      { symbol: 'NLS', lastSalePrice: 14 },
-      { symbol: 'NSU', lastSalePrice: 3.7 },
-      { symbol: 'VYMI', lastSalePrice: 0 },
-      { symbol: 'EPE', lastSalePrice: 2.085 },
-      { symbol: 'FCFS', lastSalePrice: 82.2 },
-      { symbol: 'ATU', lastSalePrice: 27.925 },
-      { symbol: 'STK', lastSalePrice: 21.96 },
-      { symbol: 'DIT', lastSalePrice: 0 },
-      { symbol: 'EIM', lastSalePrice: 11.765 },
-      { symbol: 'EIDX', lastSalePrice: 18.37 },
-      { symbol: 'DBX', lastSalePrice: 30.045 },
-      { symbol: 'EZT', lastSalePrice: 0 },
-      { symbol: 'CVM', lastSalePrice: 0.8902 },
-      { symbol: 'MMS', lastSalePrice: 64.74 }
-    ]);
+    const expected = Map({
+      isFething: false,
+      data: List([
+        { symbol: 'KWR', lastSalePrice: 161.3 },
+        { symbol: 'MHNC', lastSalePrice: 23.62 },
+        { symbol: 'DWTR', lastSalePrice: 0 },
+        { symbol: 'TACOW', lastSalePrice: 0 },
+        { symbol: 'INFU', lastSalePrice: 0 },
+        { symbol: 'AI', lastSalePrice: 10.415 },
+        { symbol: 'NLS', lastSalePrice: 14 },
+        { symbol: 'NSU', lastSalePrice: 3.7 },
+        { symbol: 'VYMI', lastSalePrice: 0 },
+        { symbol: 'EPE', lastSalePrice: 2.085 },
+        { symbol: 'FCFS', lastSalePrice: 82.2 },
+        { symbol: 'ATU', lastSalePrice: 27.925 },
+        { symbol: 'STK', lastSalePrice: 21.96 },
+        { symbol: 'DIT', lastSalePrice: 0 },
+        { symbol: 'EIM', lastSalePrice: 11.765 },
+        { symbol: 'EIDX', lastSalePrice: 18.37 },
+        { symbol: 'DBX', lastSalePrice: 30.045 },
+        { symbol: 'EZT', lastSalePrice: 0 },
+        { symbol: 'CVM', lastSalePrice: 0.8902 },
+        { symbol: 'MMS', lastSalePrice: 64.74 }
+      ])
+    })
 
     expect(getVisibleStocks(state)).toEqual(expected);
   });
@@ -44,17 +47,20 @@ describe('selectors: stocks', () => {
   test('getVisibleStocks filter stocks by symbol when stockFilterQuery has a value', () => {
     const state = {
       stockFilterQuery: 'A',
-      stocks: {
+      stocks: Map({
         isFething: false,
         data: List(exampleData)
-      }
+      })
     };
-    const expected = List([
-      {symbol: 'TACOW', lastSalePrice: 0},
-      {symbol: 'AI', lastSalePrice: 10.415},
-      {symbol: 'ATU', lastSalePrice: 27.925},
-      {symbol: 'GAMR', lastSalePrice: 0},
-    ]);
+    const expected = Map({
+      isFething: false,
+      data: List([
+        {symbol: 'TACOW', lastSalePrice: 0},
+        {symbol: 'AI', lastSalePrice: 10.415},
+        {symbol: 'ATU', lastSalePrice: 27.925},
+        {symbol: 'GAMR', lastSalePrice: 0},
+      ])
+    });
 
     expect(getVisibleStocks(state)).toEqual(expected);
   });
