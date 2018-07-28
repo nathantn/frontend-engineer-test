@@ -1,3 +1,5 @@
+import { Map, List } from 'immutable';
+
 import {
   fetchStocks,
   fetchStocksIfNeeded,
@@ -6,7 +8,6 @@ import {
   requestStocksError,
 } from './stocks';
 import iexApi from '../resources/iexApi'
-import { Map, List } from 'immutable';
 
 // Mock functions
 const dispatchMock = jest.fn();
@@ -27,6 +28,8 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocks dispatch requestStockSuccess when request have been done without error', async () => {
+    expect.assertions(3);
+
     const data = [1, 2, 3];
     iexApi.fetchStocks.mockResolvedValue({ ok: true, data });
 
@@ -38,6 +41,8 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocks dispatch requestStockError when request fail', async () => {
+    expect.assertions(3);
+
     const data = new Error();
     iexApi.fetchStocks.mockResolvedValue({ ok: false, data });
 
