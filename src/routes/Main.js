@@ -1,11 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import StockListPage from './StockListPage';
+import StockDetailPage from './StockDetailPage';
 
 const Main = () => (
   <BrowserRouter>
-    <Route exact path="/" component={StockListPage} />
+    <Switch>
+      <Route path="/stock/:symbol" component={StockDetailPage} />
+      <Route exact path="/" component={StockListPage} />
+    </Switch>
   </BrowserRouter>
 )
 

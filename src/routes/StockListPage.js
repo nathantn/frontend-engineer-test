@@ -12,7 +12,7 @@ const StockListPage = () => (
       {state => (
         <AsyncStateRender
           state={state}
-          loading={() => <h1>carregando...</h1>}
+          loading={() => <p>carregando...</p>}
           error={() => <p>{state.get('error')}</p>}
           render={() => <StockList stocks={state.get('data')} />}
         />
