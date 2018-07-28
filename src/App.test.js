@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 describe('<App />', () => {
-  test('renderiza sem quebrar', () => {
+  test('renders without break', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
