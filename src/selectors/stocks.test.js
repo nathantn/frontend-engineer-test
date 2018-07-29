@@ -10,14 +10,14 @@ describe('selectors: stocks', () => {
   test('getVisibleStocks return 20 must important stocks from state when filter is null', () => {
     const state = {
       stockFilterQuery: null,
-      stocks: Map({
+      stocks: Map({}).merge({
         isFething: false,
-        data: List(exampleData)
+        data: exampleData
       })
     };
-    const expected = Map({
+    const expected = Map({}).merge({
       isFething: false,
-      data: List([
+      data: [
         { symbol: 'KWR', lastSalePrice: 161.3 },
         { symbol: 'MHNC', lastSalePrice: 23.62 },
         { symbol: 'DWTR', lastSalePrice: 0 },
@@ -38,8 +38,8 @@ describe('selectors: stocks', () => {
         { symbol: 'EZT', lastSalePrice: 0 },
         { symbol: 'CVM', lastSalePrice: 0.8902 },
         { symbol: 'MMS', lastSalePrice: 64.74 }
-      ])
-    })
+      ]
+    });
 
     expect(getVisibleStocks(state)).toEqual(expected);
   });
@@ -47,19 +47,19 @@ describe('selectors: stocks', () => {
   test('getVisibleStocks filter stocks by symbol when stockFilterQuery has a value', () => {
     const state = {
       stockFilterQuery: 'A',
-      stocks: Map({
+      stocks: Map({}).merge({
         isFething: false,
-        data: List(exampleData)
+        data: exampleData
       })
     };
-    const expected = Map({
+    const expected = Map({}).merge({
       isFething: false,
-      data: List([
+      data: [
         {symbol: 'TACOW', lastSalePrice: 0},
         {symbol: 'AI', lastSalePrice: 10.415},
         {symbol: 'ATU', lastSalePrice: 27.925},
         {symbol: 'GAMR', lastSalePrice: 0},
-      ])
+      ]
     });
 
     expect(getVisibleStocks(state)).toEqual(expected);

@@ -10,19 +10,19 @@ const defaultState = Map({
 const reducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case REQUEST_STOCKS:
-      return Map({
+      return state.merge({
         isFetching: true,
         data: null,
         error: null,
       });
     case REQUEST_STOCKS_SUCCESS:
-      return Map({
+      return state.merge({
         isFetching: false,
         data: payload,
         error: null,
       });
     case REQUEST_STOCKS_ERROR:
-      return Map({
+      return state.merge({
         isFetching: false,
         data: null,
         error: payload,

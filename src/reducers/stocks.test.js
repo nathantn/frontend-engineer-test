@@ -15,8 +15,8 @@ describe('reducers: stocks', () => {
   });
 
   test('reducer update state when receive requestStocksSuccess action', () => {
-    const data = List([1, 2, 3]);
-    const expected = Map({ isFetching: false, data, error: null });
+    const data = [1, 2, 3];
+    const expected = Map({ isFetching: false, data: List(data), error: null });
     expect(reducer(undefined, requestStocksSuccess(data))).toEqual(expected);
   });
 
