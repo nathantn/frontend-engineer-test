@@ -1,9 +1,15 @@
 import React from 'react'
 
+import './StockFilterQueryInput.scss';
+
 const StockFilterQueryInput = props => (
-  <div>
-    <input defaultValue={props.value} onChange={props.onChange} />
-    {props.value && <small>filtrando por: <strong>"{props.value}"</strong></small>}
+  <div className="stock-filter">
+    <input
+      className="stock-filter search"
+      placeholder="Filtrar ações"
+      defaultValue={props.value}
+      onChange={props.onChange}
+    />
   </div>
 );
 
