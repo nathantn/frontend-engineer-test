@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 
-const getStockQuoteByPropsKey = (state, props) => state.get('stockQuote').get(props.key);
+const getStockQuoteByPropsKey = (state, props) => state.stockQuote.get(props.key);
 
 export const getStockQuote = createSelector(
   getStockQuoteByPropsKey,
