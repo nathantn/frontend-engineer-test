@@ -2,7 +2,7 @@ import React from 'react';
 
 const dotToComma = str => `${str}`.replace('.', ',');
 const addPrefix = str => `R$ ${str}`;
-const convertToBrl = str => addPrefix(dotToComma(str)); // Todo: apply some compose implementantion
+const convertToBrl = str => addPrefix(dotToComma(str)); // @todo: apply some compose implementantion
 
 const ToBRL = props => (
   <span>
