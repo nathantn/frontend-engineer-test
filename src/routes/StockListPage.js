@@ -4,6 +4,7 @@ import AsyncStateRender from '../components/AsyncStateRender';
 import StockFilterQueryInput from '../containers/StockFilterQueryInput'
 import StockList from '../components/StockList';
 import VisibleStocksProvider from '../providers/VisibleStocksProvider';
+import Loading from '../components/Loading';
 
 const StockListPage = () => (
   <div className="page-wrapper">
@@ -12,7 +13,7 @@ const StockListPage = () => (
       {state => (
         <AsyncStateRender
           state={state}
-          loading={() => <p>carregando...</p>}
+          loading={() => <Loading />}
           error={() => <p>{state.get('error')}</p>}
           render={() => <StockList stocks={state.get('data')} />}
         />

@@ -4,6 +4,7 @@ import StockQuoteProvider from '../providers/StockQuoteProvider';
 
 import AsyncStateRender from '../components/AsyncStateRender';
 import StockQuoteItem from '../components/StockQuoteItem';
+import Loading from '../components/Loading';
 
 const StockQuotePage = props => (
   <div className="page-wrapper">
@@ -11,12 +12,12 @@ const StockQuotePage = props => (
       {state => state ? (
         <AsyncStateRender
           state={state}
-          loading={() => <p>carregando...</p>}
+          loading={() => <Loading />}
           error={() => <p>{state.get('error')}</p>}
           render={() => <StockQuoteItem stockQuote={state.get('data')} />}
         />
       ) : (
-        <p>carregando...</p>
+        <Loading />
       )}
     </StockQuoteProvider>
   </div>

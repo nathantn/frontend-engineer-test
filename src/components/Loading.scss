@@ -1,0 +1,41 @@
+@keyframes loading-dot-left {
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes loading-dot-right {
+  50% {
+    transform: translateX(-15px);
+  }
+}
+
+.loading {
+  display: flex;
+  width: 100px;
+
+  .dot {
+    width: calc(320px/3);
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 0;
+
+    &::after {
+      content: ' ';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #6a5acd;
+    }
+  }
+
+  :nth-child(1) {
+    animation: loading-dot-left 300ms ease-out infinite;
+  }
+
+  :nth-child(3) {
+    animation: loading-dot-right 300ms ease-out infinite;
+  }
+}
