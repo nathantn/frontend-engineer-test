@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
 
 class StockQuoteProvider extends React.Component {
   componentDidMount() {
-    this.props.fetchStockQuote(this.props.key);
+    this.props.fetchStockQuote(this.props.id);
   }
 
   render() {

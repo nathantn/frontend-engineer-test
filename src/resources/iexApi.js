@@ -10,6 +10,6 @@ export default {
   },
 
   getStockQuote(stockSymbol, options) {
-    return api.get(`/${stockSymbol}/quote`, options);
+    return api.get(`/stock/${stockSymbol}/quote`, options);
   },
 };

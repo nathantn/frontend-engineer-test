@@ -24,8 +24,8 @@ export const fetchStockQuote = stockSymbol => async (dispatch, getState, { iexAp
   const response = await iexApi.getStockQuote(stockSymbol);
 
   if (response.ok) {
-    dispatch(requestStockQuoteSuccess(response.data))
+    dispatch(requestStockQuoteSuccess(stockSymbol, response.data))
   } else {
-    dispatch(requestStockQuoteError(response.data))
+    dispatch(requestStockQuoteError(stockSymbol, response.data))
   }
 }

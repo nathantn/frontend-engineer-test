@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect'
 
-const getStockQuoteByPropsKey = (state, props) => state.stockQuote.get(props.key);
+const getStockQuoteByPropsId = (state, props) => state.stockQuote.get(props.id);
 
 export const getStockQuote = createSelector(
-  getStockQuoteByPropsKey,
+  getStockQuoteByPropsId,
   stockQuote => stockQuote, // @todo: apply some fn identity solution, maybe RamdaJs.
 );
