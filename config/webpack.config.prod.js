@@ -5,14 +5,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
+const buildDirectory = path.resolve(appDirectory, 'build');
 const publicDirectory = path.resolve(appDirectory, 'public');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
-  mode: 'development',
+  mode: 'production',
   output: {
-    path: publicDirectory,
-    filename: 'js/bundle.js',
+    path: buildDirectory,
+    filename: 'static/js/[name].[chunkhash:8].js',
     publicPath: '/',
   },
   module: {
@@ -37,7 +38,9 @@ module.exports = {
     ]
   },
   plugins:[
-    new ExtractTextPlugin('./css/style.css'),
+    new ExtractTextPlugin({
+      filename: 'static/css/[name].[hash:8].css'
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(publicDirectory, 'index.html'),

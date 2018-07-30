@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.dev.js",
     "test": "jest",
-    "test:ci": "jest --watch --onlyChanged"
+    "test:ci": "jest --watch --onlyChanged",
+    "build": "webpack --config config/webpack.config.prod.js"
   },
   "jest": {
     "testMatch": [

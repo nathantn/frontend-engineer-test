@@ -8,7 +8,7 @@ const Main = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/stock/:symbol" component={StockQuotePage} />
-      <Route exact path="/" component={StockListPage} />
+      <Route path="/" component={StockListPage} />
     </Switch>
   </BrowserRouter>
 )
