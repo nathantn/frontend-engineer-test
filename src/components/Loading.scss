@@ -12,10 +12,12 @@
 
 .loading {
   display: flex;
-  width: 100px;
+  width: 100%;
+  justify-content: center;
+  margin: 20px 0;
 
   .dot {
-    width: calc(320px/3);
+    width: calc(100px/3);
     height: 10px;
     display: flex;
     justify-content: center;
@@ -27,7 +29,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: #61dafb;
+      background-color: #14171a;
     }
   }
 

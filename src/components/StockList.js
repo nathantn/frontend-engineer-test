@@ -1,6 +1,8 @@
 import React from 'react';
 import StockItem from './StockItem';
 
+import './StockList.scss';
+
 const StockList = props => (
   <ul className="stock-list list">
     {props.stocks.map(item => (
