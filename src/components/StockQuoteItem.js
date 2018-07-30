@@ -1,15 +1,22 @@
 import React from 'react';
 
+import './StockQuoteItem.scss';
+import ToBRL from './ToBRL';
+
 const StockQuoteItem = props => (
-  <section>
-    <h1>
+  <section className="stock-quote-item">
+    <h1 className="title">
       {props.stockQuote.get('companyName')}
       <span>{props.stockQuote.get('symbol')}</span>
     </h1>
     <p>{props.stockQuote.get('sector')}</p>
     <div>
-      <p>{props.stockQuote.get('latestPrice')}</p>
-      <p>{props.stockQuote.get('change')}</p>
+      <p>
+        <ToBRL>{props.stockQuote.get('latestPrice')}</ToBRL>
+      </p>
+      <p>
+        <ToBRL>{props.stockQuote.get('change')}</ToBRL>
+      </p>
     </div>
   </section>
 );

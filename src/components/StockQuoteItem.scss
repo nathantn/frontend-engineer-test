@@ -1,0 +1,16 @@
+.stock-quote-item {
+  padding: 20px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 40px;
+  }
+
+  .title {
+    font-size: 2.5em;
+    span {
+      margin-left: 10px;
+      opacity: 0.6;
+      font-size: 1rem;
+    }
+  }
+}
