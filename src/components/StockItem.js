@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './StockItem.scss';
 import ToBRL from './ToBRL';
 
 const StockItem = props => (
-  <div>
-    <Link to={`/stock/${props.stock.get('symbol')}`}>
-      <span>{props.stock.get('symbol')}</span>
-      {' | '}
+  <div className="stock-item">
+    <Link
+      className="stock-item link"
+      to={`/stock/${props.stock.get('symbol')}`}
+    >
+      <span className="stock-item symbol">{props.stock.get('symbol')}</span>
       <ToBRL>
         {props.stock.get('price')}
       </ToBRL>

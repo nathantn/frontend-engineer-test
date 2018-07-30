@@ -1,0 +1,24 @@
+.stock-item {
+  padding: 5px;
+
+  .link {
+    display: inline-block;
+    text-decoration: none;
+    color: #14171a;
+
+    &:visited {
+      color: #14171a;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .symbol {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-right: 5px;
+    display: block;
+  }
+}
