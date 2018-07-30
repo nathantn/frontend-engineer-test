@@ -1,3 +1,29 @@
+# Solução
+
+## Para rodar local
+1. Clone o repositório
+
+```zsh
+git clone git@github.com:nathantn/frontend-engineer-test.git
+```
+
+2. Instale as dependências
+
+```zsh
+yarn
+# ou
+npm install
+```
+
+3. Inicie a solução em modo de desenvolvimento
+
+```zsh
+yarn start
+#ou
+npm run start
+```
+
+
 # Frontend Engineer Test
 
 ## Critérios de avaliação
@@ -33,7 +59,7 @@ A escolha do _framework_ de roteamento fica a seu cargo.
 Ao cumprir os pontos de sucesso abaixo, você melhora a sua pontuação no processo de seleção:
 - [ ] Apresentar projeto no [Docker](https://www.docker.com/);
 - [ ] Utilizar [TypeScript](https://www.typescriptlang.org/);
-- [ ] Utilizar [webpack](https://webpack.js.org/) e produzir um único arquivo de _output_;
+- [] Utilizar [webpack](https://webpack.js.org/) e produzir um único arquivo de _output_;
 - [ ] Utilizar [socket.io](https://socket.io) para criar um gráfico _realtime_ do mercado (o endpoint é fornecido pela API)
 - [ ] Utilizar gráficos D3.js;
-- [ ] Utilizar tipos imutáveis ou [Immutable-JS](https://facebook.github.io/immutable-js/).
+- [] Utilizar tipos imutáveis ou [Immutable-JS](https://facebook.github.io/immutable-js/).
