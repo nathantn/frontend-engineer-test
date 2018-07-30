@@ -21,7 +21,9 @@ export const requestStockQuoteError = (key, data) => ({
 
 export const fetchStockQuote = stockSymbol => async (dispatch, getState, { iexApi }) => {
   dispatch(requestStockQuote(stockSymbol));
-  const response = await iexApi.getStockQuote(stockSymbol);
+  const response = await iexApi.getStockQuote(stockSymbol, {
+    filter: 'companyName,symbol,sector,latestPrice,change'
+  });
 
   if (response.ok) {
     dispatch(requestStockQuoteSuccess(stockSymbol, response.data))
