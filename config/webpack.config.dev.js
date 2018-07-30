@@ -2,20 +2,19 @@ const fs = require('fs');
 const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const buildDirectory = path.resolve(appDirectory, 'build');
 const publicDirectory = path.resolve(appDirectory, 'public');
 
-const ExtractScss = new ExtractTextPlugin('./css/style.css');
-
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
   mode: 'development',
   output: {
-    path: buildDirectory,
-    filename: './js/bundle.js',
-    publicPath: '/static',
+    path: publicDirectory,
+    filename: 'js/bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -27,7 +26,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /(node_modules)/,
-        use: ExtractScss.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{
             loader: "css-loader", options: { importLoaders: 1 }
@@ -39,7 +38,11 @@ module.exports = {
     ]
   },
   plugins:[
-    ExtractScss,
+    new ExtractTextPlugin('./css/style.css'),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(publicDirectory, 'index.html'),
+    }),
   ],
   devServer: {
     inline: true,
