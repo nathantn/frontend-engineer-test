@@ -7,7 +7,7 @@ import VisibleStocksProvider from '../providers/VisibleStocksProvider';
 import Loading from '../components/Loading';
 
 const StockListPage = () => (
-  <div className="page-wrapper">
+  <React.Fragment>
     <StockFilterQueryInput />
     <VisibleStocksProvider>
       {state => (
@@ -19,7 +19,7 @@ const StockListPage = () => (
         />
       )}
     </VisibleStocksProvider>
-  </div>
+  </React.Fragment>
 );
 
 export default StockListPage;

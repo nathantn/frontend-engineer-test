@@ -7,7 +7,7 @@ import StockQuoteItem from '../components/StockQuoteItem';
 import Loading from '../components/Loading';
 
 const StockQuotePage = props => (
-  <div className="page-wrapper">
+  <React.Fragment>
     <StockQuoteProvider id={props.match.params.symbol}>
       {state => state ? (
         <AsyncStateRender
@@ -20,7 +20,7 @@ const StockQuotePage = props => (
         <Loading />
       )}
     </StockQuoteProvider>
-  </div>
+  </React.Fragment>
 );
 
 export default StockQuotePage;
