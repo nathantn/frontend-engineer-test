@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --config config/webpack.config.dev.js",
     "test": "jest",
     "test:ci": "jest --watch --onlyChanged",
-    "build": "webpack --config config/webpack.config.prod.js"
+    "build": "webpack --config config/webpack.config.prod.js",
+    "gh-pages": "yarn build && node scripts/gh-pages"
   },
   "jest": {
     "testMatch": [
@@ -43,6 +44,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.4.1",
     "node-sass": "^4.9.2",

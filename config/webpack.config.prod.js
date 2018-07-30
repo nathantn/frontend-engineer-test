@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: buildDirectory,
     filename: 'static/js/[name].[chunkhash:8].js',
-    publicPath: '/',
+    publicPath: '',
   },
   module: {
     rules: [
