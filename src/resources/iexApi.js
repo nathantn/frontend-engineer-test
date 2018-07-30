@@ -6,7 +6,7 @@ const api = create({
 
 export default {
   fetchStocks(options) {
-    return api.get('/tops/last', options);
+    return api.get('/tops', options);
   },
 
   getStockQuote(stockSymbol, options) {

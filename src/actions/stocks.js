@@ -18,11 +18,17 @@ export const requestStocksError = data => ({
 
 export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
   dispatch(requestStocks());
-  const response = await iexApi.fetchStocks();
+  const response = await iexApi.fetchStocks({
+    filter: 'symbol,lastSalePrice,volume',
+  });
 
   if (response.ok) {
-    const sortByPrice = ({ price: aPrice}, { price: bPrice }) => bPrice - aPrice;
-    dispatch(requestStocksSuccess(response.data.sort(sortByPrice)));
+    const marketCap = stock => stock.lastSalePrice * stock.volume;
+    const sortByMarketCap = (a, b) => marketCap(a) - marketCap(b);
+    // Sort stocks by market cap
+    const sortedData = response.data.sort(sortByMarketCap);
+
+    dispatch(requestStocksSuccess(sortedData));
   } else {
     dispatch(requestStocksError(response.data));
   }

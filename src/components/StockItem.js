@@ -12,7 +12,7 @@ const StockItem = props => (
     >
       <span className="stock-item symbol">{props.stock.get('symbol')}</span>
       <ToBRL>
-        {props.stock.get('price')}
+        {props.stock.get('lastSalePrice')}
       </ToBRL>
     </Link>
   </div>
