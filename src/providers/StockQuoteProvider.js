@@ -5,7 +5,7 @@ import { getStockQuote } from '../selectors/stockQuote';
 import { fetchStockQuote } from '../actions/stockQuote';
 
 const mapStateToProps = (state, props) => ({
-  stockQuote: getStockQuote(state, props),
+  stockQuote: getStockQuote(state, props)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -22,6 +22,9 @@ class StockQuoteProvider extends React.Component {
   render() {
     return this.props.children(this.props.stockQuote);
   }
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(StockQuoteProvider);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StockQuoteProvider);

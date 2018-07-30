@@ -4,13 +4,13 @@ export const REQUEST_STOCK_QUOTE_ERROR = '@stockQuote/requestError';
 
 export const requestStockQuote = key => ({
   type: REQUEST_STOCK_QUOTE,
-  key,
+  key
 });
 
 export const requestStockQuoteSuccess = (key, data) => ({
   type: REQUEST_STOCK_QUOTE_SUCCESS,
   payload: data,
-  key,
+  key
 });
 
 export const requestStockQuoteError = (key, data) => ({
@@ -19,15 +19,19 @@ export const requestStockQuoteError = (key, data) => ({
   key
 });
 
-export const fetchStockQuote = stockSymbol => async (dispatch, getState, { iexApi }) => {
+export const fetchStockQuote = stockSymbol => async (
+  dispatch,
+  getState,
+  { iexApi }
+) => {
   dispatch(requestStockQuote(stockSymbol));
   const response = await iexApi.getStockQuote(stockSymbol, {
     filter: 'companyName,symbol,sector,latestPrice,change'
   });
 
   if (response.ok) {
-    dispatch(requestStockQuoteSuccess(stockSymbol, response.data))
+    dispatch(requestStockQuoteSuccess(stockSymbol, response.data));
   } else {
-    dispatch(requestStockQuoteError(stockSymbol, response.data))
+    dispatch(requestStockQuoteError(stockSymbol, response.data));
   }
-}
+};

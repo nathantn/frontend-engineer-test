@@ -1,11 +1,11 @@
 import { Map, List } from 'immutable';
 
-import iexApi from '../resources/iexApi'
+import iexApi from '../resources/iexApi';
 import {
   fetchStockQuote,
   requestStockQuote,
   requestStockQuoteError,
-  requestStockQuoteSuccess,
+  requestStockQuoteSuccess
 } from './stockQuote';
 
 // Mock functions
@@ -38,7 +38,9 @@ describe('actions: stockQuote', () => {
 
     expect(dispatchMock).toHaveBeenCalledWith(requestStockQuote('test'));
     expect(iexApi.getStockQuote).toHaveBeenCalled();
-    expect(dispatchMock).toHaveBeenLastCalledWith(requestStockQuoteSuccess('test', data));
+    expect(dispatchMock).toHaveBeenLastCalledWith(
+      requestStockQuoteSuccess('test', data)
+    );
   });
 
   test('fetchStockQuote dispatch requestStockQuoteError when request fail', async () => {
@@ -51,6 +53,8 @@ describe('actions: stockQuote', () => {
 
     expect(dispatchMock).toHaveBeenCalledWith(requestStockQuote('test'));
     expect(iexApi.getStockQuote).toHaveBeenCalled();
-    expect(dispatchMock).toHaveBeenLastCalledWith(requestStockQuoteError('test', data));
+    expect(dispatchMock).toHaveBeenLastCalledWith(
+      requestStockQuoteError('test', data)
+    );
   });
 });

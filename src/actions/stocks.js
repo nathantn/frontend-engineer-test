@@ -3,23 +3,23 @@ export const REQUEST_STOCKS_SUCCESS = '@stocks/requestSuccess';
 export const REQUEST_STOCKS_ERROR = '@stocks/requestError';
 
 export const requestStocks = () => ({
-  type: REQUEST_STOCKS,
+  type: REQUEST_STOCKS
 });
 
 export const requestStocksSuccess = data => ({
   type: REQUEST_STOCKS_SUCCESS,
-  payload: data,
+  payload: data
 });
 
 export const requestStocksError = data => ({
   type: REQUEST_STOCKS_ERROR,
-  payload: data,
+  payload: data
 });
 
 export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
   dispatch(requestStocks());
   const response = await iexApi.fetchStocks({
-    filter: 'symbol,lastSalePrice,volume',
+    filter: 'symbol,lastSalePrice,volume'
   });
 
   if (response.ok) {
@@ -32,9 +32,10 @@ export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
   } else {
     dispatch(requestStocksError(response.data));
   }
-}
+};
 
-const shouldFetchStocks = state => !state.get('isFetching') && !state.get('data');
+const shouldFetchStocks = state =>
+  !state.get('isFetching') && !state.get('data');
 
 export const fetchStocksIfNeeded = () => (disptach, getState, { iexApi }) => {
   const { stocks } = getState();
@@ -42,4 +43,4 @@ export const fetchStocksIfNeeded = () => (disptach, getState, { iexApi }) => {
   if (shouldFetchStocks(stocks)) {
     return disptach(fetchStocks());
   }
-}
+};

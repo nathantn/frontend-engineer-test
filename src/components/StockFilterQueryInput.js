@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import './StockFilterQueryInput.scss';
 
@@ -14,7 +14,7 @@ const StockFilterQueryInput = props => (
 );
 
 StockFilterQueryInput.defaultProps = {
-  value: '',
+  value: ''
 };
 
 export default StockFilterQueryInput;

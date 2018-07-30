@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AsyncStateRender from '../components/AsyncStateRender';
-import StockFilterQueryInput from '../containers/StockFilterQueryInput'
+import StockFilterQueryInput from '../containers/StockFilterQueryInput';
 import StockList from '../components/StockList';
 import VisibleStocksProvider from '../providers/VisibleStocksProvider';
 import Loading from '../components/Loading';

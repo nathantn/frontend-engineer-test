@@ -1,12 +1,14 @@
-import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
 
 const getStocks = state => state.stocks;
 const getStockFilterQuery = state => state.stockFilterQuery;
 
 const filterTopTwentyStocks = list => list.slice(0, 20);
 
-const stockSymbolChecker = (query = '') => stock => stock.get('symbol').indexOf(query.toUpperCase()) > -1;
-const filterStocksBySymbol = (list, query) => list.filter(stockSymbolChecker(query));
+const stockSymbolChecker = (query = '') => stock =>
+  stock.get('symbol').indexOf(query.toUpperCase()) > -1;
+const filterStocksBySymbol = (list, query) =>
+  list.filter(stockSymbolChecker(query));
 
 export const getVisibleStocks = createSelector(
   [getStocks, getStockFilterQuery],
@@ -20,6 +22,6 @@ export const getVisibleStocks = createSelector(
       ? filterStocksBySymbol(stockList, query)
       : filterTopTwentyStocks(stockList);
 
-    return stocks.merge({ data })
+    return stocks.merge({ data });
   }
 );

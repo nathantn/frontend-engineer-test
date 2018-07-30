@@ -9,16 +9,18 @@ import Loading from '../components/Loading';
 const StockQuotePage = props => (
   <React.Fragment>
     <StockQuoteProvider id={props.match.params.symbol}>
-      {state => state ? (
-        <AsyncStateRender
-          state={state}
-          loading={() => <Loading />}
-          error={() => <p>{state.get('error')}</p>}
-          render={() => <StockQuoteItem stockQuote={state.get('data')} />}
-        />
-      ) : (
-        <Loading />
-      )}
+      {state =>
+        state ? (
+          <AsyncStateRender
+            state={state}
+            loading={() => <Loading />}
+            error={() => <p>{state.get('error')}</p>}
+            render={() => <StockQuoteItem stockQuote={state.get('data')} />}
+          />
+        ) : (
+          <Loading />
+        )
+      }
     </StockQuoteProvider>
   </React.Fragment>
 );

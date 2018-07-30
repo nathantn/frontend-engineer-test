@@ -29,7 +29,7 @@ describe('<VisibleStocksProvider />', () => {
     const expected = Map({
       isFetching: false,
       data: null,
-      error: null,
+      error: null
     });
     expect(childMock).toHaveBeenCalledWith(expected);
 

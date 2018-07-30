@@ -1,6 +1,10 @@
 import { Map, List } from 'immutable';
 
-import { requestStocks, requestStocksSuccess, requestStocksError } from '../actions/stocks';
+import {
+  requestStocks,
+  requestStocksSuccess,
+  requestStocksError
+} from '../actions/stocks';
 import reducer from './stocks';
 
 describe('reducers: stocks', () => {

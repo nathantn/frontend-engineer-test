@@ -6,10 +6,10 @@ const AsyncStateRender = props => {
   if (props.state.get('data')) return props.render();
 
   return props.fallback();
-}
+};
 
 AsyncStateRender.defaultProps = {
-  fallback: () => false,
+  fallback: () => false
 };
 
 export default AsyncStateRender;

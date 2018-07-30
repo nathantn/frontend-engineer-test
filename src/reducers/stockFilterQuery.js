@@ -1,6 +1,6 @@
 import { UPDATE_FILTER_QUERY } from '../actions/stockFilterQuery';
 
-const nullIfStringIsEmpty = (str = '') => str.length ? str : null;
+const nullIfStringIsEmpty = (str = '') => (str.length ? str : null);
 
 const reducer = (state = null, { type, payload }) => {
   switch (type) {
@@ -9,6 +9,6 @@ const reducer = (state = null, { type, payload }) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

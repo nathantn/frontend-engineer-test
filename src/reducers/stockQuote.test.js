@@ -1,6 +1,10 @@
 import { Map, List } from 'immutable';
 
-import { requestStockQuote, requestStockQuoteSuccess, requestStockQuoteError } from '../actions/stockQuote';
+import {
+  requestStockQuote,
+  requestStockQuoteSuccess,
+  requestStockQuoteError
+} from '../actions/stockQuote';
 import reducer from './stockQuote';
 
 describe('reducers: stockQuote', () => {
@@ -14,7 +18,7 @@ describe('reducers: stockQuote', () => {
       test: Map({
         isFetching: true,
         data: null,
-        error: null,
+        error: null
       })
     });
     expect(reducer(undefined, requestStockQuote('test'))).toEqual(expected);
@@ -26,10 +30,12 @@ describe('reducers: stockQuote', () => {
       test: Map({
         isFetching: false,
         data: Map(data),
-        error: null,
+        error: null
       })
     });
-    expect(reducer(undefined, requestStockQuoteSuccess('test', data))).toEqual(expected);
+    expect(reducer(undefined, requestStockQuoteSuccess('test', data))).toEqual(
+      expected
+    );
   });
 
   test('reducer update state when receive requestStockQuoteError action', () => {
@@ -38,9 +44,11 @@ describe('reducers: stockQuote', () => {
       test: Map({
         isFetching: false,
         data: null,
-        error,
+        error
       })
     });
-    expect(reducer(undefined, requestStockQuoteError('test', error))).toEqual(expected);
+    expect(reducer(undefined, requestStockQuoteError('test', error))).toEqual(
+      expected
+    );
   });
 });

@@ -5,9 +5,9 @@ import {
   fetchStocksIfNeeded,
   requestStocks,
   requestStocksSuccess,
-  requestStocksError,
+  requestStocksError
 } from './stocks';
-import iexApi from '../resources/iexApi'
+import iexApi from '../resources/iexApi';
 
 // Mock functions
 const dispatchMock = jest.fn();
@@ -72,7 +72,9 @@ describe('actions: stocks', () => {
   });
 
   test('fetchStocksIfNeeded should dispatch fetchStocks when isFetching and data attribute from stocks states have falsy value', () => {
-    getStateMock.mockReturnValue({ stocks: Map({ isFetching: false, data: null }) });
+    getStateMock.mockReturnValue({
+      stocks: Map({ isFetching: false, data: null })
+    });
 
     fetchStocksIfNeeded()(dispatchMock, getStateMock, { iexApi });
 

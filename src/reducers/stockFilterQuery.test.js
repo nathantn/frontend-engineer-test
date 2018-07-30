@@ -12,6 +12,6 @@ describe('reducers: stockFilterQuery', () => {
 
   test('update value when receive updateStockFilterQuery action', () => {
     const query = 'test';
-    expect(reducer(undefined, updateStockFilterQuery(query))).toEqual(query);;
-  })
+    expect(reducer(undefined, updateStockFilterQuery(query))).toEqual(query);
+  });
 });

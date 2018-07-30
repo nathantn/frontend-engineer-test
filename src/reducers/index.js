@@ -7,5 +7,5 @@ import stockQuote from './stockQuote';
 export default combineReducers({
   stockFilterQuery,
   stocks,
-  stockQuote,
+  stockQuote
 });

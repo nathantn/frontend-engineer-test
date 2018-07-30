@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 
 const api = create({
-  baseURL: 'https://api.iextrading.com/1.0',
+  baseURL: 'https://api.iextrading.com/1.0'
 });
 
 export default {
@@ -11,5 +11,5 @@ export default {
 
   getStockQuote(stockSymbol, options) {
     return api.get(`/stock/${stockSymbol}/quote`, options);
-  },
+  }
 };

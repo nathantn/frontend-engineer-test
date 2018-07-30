@@ -11,6 +11,6 @@ const Main = () => (
       <Route path="/" component={StockListPage} />
     </Switch>
   </BrowserRouter>
-)
+);
 
 export default Main;

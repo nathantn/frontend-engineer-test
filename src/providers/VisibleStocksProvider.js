@@ -5,7 +5,7 @@ import { getVisibleStocks } from '../selectors/stocks';
 import { fetchStocksIfNeeded } from '../actions/stocks';
 
 const mapStateToProps = state => ({
-  visibleStocks: getVisibleStocks(state),
+  visibleStocks: getVisibleStocks(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -22,6 +22,9 @@ class VisibleStocksProvider extends React.Component {
   render() {
     return this.props.children(this.props.visibleStocks);
   }
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisibleStocksProvider);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VisibleStocksProvider);
