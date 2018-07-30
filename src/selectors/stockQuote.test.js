@@ -10,7 +10,7 @@ describe('selectors: stockQuote', () => {
         test: stockQuote
       })
     };
-    const props = { key: 'test' };
+    const props = { id: 'test' };
 
     expect(getStockQuote(state, props)).toEqual(stockQuote);
   });

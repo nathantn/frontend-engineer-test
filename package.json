@@ -14,7 +14,10 @@
       "<rootDir>/src/**/?(*.)(spec|test).js"
     ],
     "testEnvironment": "jsdom",
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "moduleNameMapper": {
+      "^.+\\.(scss)$": "<rootDir>/config/jestFileStub.js"
+    }
   },
   "dependencies": {
     "apisauce": "^0.15.2",
