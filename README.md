@@ -1,3 +1,29 @@
+# Solução
+
+## Para rodar local
+1. Clone o repositório
+
+```zsh
+git clone git@github.com:nathantn/frontend-engineer-test.git
+```
+
+2. Instale as dependências
+
+```zsh
+yarn
+# ou
+npm install
+```
+
+3. Inicie a solução em modo de desenvolvimento
+
+```zsh
+yarn start
+#ou
+npm run start
+```
+
+
 # Frontend Engineer Test
 
 ## Critérios de avaliação
