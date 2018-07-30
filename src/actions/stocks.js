@@ -24,7 +24,7 @@ export const fetchStocks = () => async (dispatch, getState, { iexApi }) => {
 
   if (response.ok) {
     const marketCap = stock => stock.lastSalePrice * stock.volume;
-    const sortByMarketCap = (a, b) => marketCap(a) - marketCap(b);
+    const sortByMarketCap = (a, b) => marketCap(b) - marketCap(a);
     // Sort stocks by market cap
     const sortedData = response.data.sort(sortByMarketCap);
 
